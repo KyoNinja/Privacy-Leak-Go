@@ -6,6 +6,13 @@
  v1.0.0 is the historical baseline and stays in the old format.
 -->
 
+## 1.3.0 (2026-07-20)
+
+
+### Features
+
+* **wails:** resolve portability and v3 migration gaps (#67) (cdd7808)
+
 ## 1.2.0 (2026-07-20)
 
 
