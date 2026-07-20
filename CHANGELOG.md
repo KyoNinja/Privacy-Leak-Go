@@ -6,6 +6,20 @@
   v1.0.0 is the historical baseline and stays in the old format.
 -->
 
+## [1.2.0](https://github.com/JustShinobi/privacy-leak-go/compare/v1.1.2...v1.2.0) (2026-07-20)
+
+
+### Features
+
+* **media:** add {caption} token to the filename template ([#58](https://github.com/JustShinobi/privacy-leak-go/issues/58)) ([ad3702e](https://github.com/JustShinobi/privacy-leak-go/commit/ad3702ef3e26d9c1f6ce43959714c2f2107de1cf))
+* **media:** restore chat media and rebuild selection UI ([48c1ded](https://github.com/JustShinobi/privacy-leak-go/commit/48c1dedf69c2e2c7f8744bb121c1540c968292b8))
+* **release:** show development commit hashes and sync app versions ([4978c38](https://github.com/JustShinobi/privacy-leak-go/commit/4978c38b1a485bec181a383e2d1dc8fcf2b2f2a8))
+
+
+### Bug Fixes
+
+* reject filename templates without media id ([#52](https://github.com/JustShinobi/privacy-leak-go/issues/52)) ([ea76567](https://github.com/JustShinobi/privacy-leak-go/commit/ea76567577834f1ca4644163bf657ca684b841b0))
+
 ## 1.1.2 (2026-07-08)
 
 
