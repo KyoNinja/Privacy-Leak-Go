@@ -6,6 +6,13 @@
  v1.0.0 is the historical baseline and stays in the old format.
 -->
 
+## 1.4.0 (2026-08-01)
+
+
+### Features
+
+* **ui:** prompt to install missing FFmpeg on app startup (#90) (2c8a1c3)
+
 ## 1.3.0 (2026-07-20)
 
 
