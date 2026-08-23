@@ -6,6 +6,14 @@
  v1.0.0 is the historical baseline and stays in the old format.
 -->
 
+## 1.5.0 (2026-08-23)
+
+
+### Features
+
+* **app:** show startup update notification (#100) (aeab9fc)
+* **upload:** enhance uploads workflow and profile-scoped queue (#95) (80bed80)
+
 ## 1.4.0 (2026-08-01)
 
 
