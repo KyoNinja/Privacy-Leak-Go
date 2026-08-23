@@ -6,6 +6,15 @@
  v1.0.0 is the historical baseline and stays in the old format.
 -->
 
+## 1.6.0 (2026-08-23)
+
+
+### Features
+
+* promote startup update to develop (ae42a25)
+* **ui:** standardize settings and page layouts (#103) (ac90b4e)
+* **ui:** standardize settings layout and polish uploads workspace (#107) (7a94b06)
+
 ## 1.5.0 (2026-08-23)
 
 
