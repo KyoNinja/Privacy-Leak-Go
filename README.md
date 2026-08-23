@@ -9,11 +9,11 @@
 [![Latest release](https://img.shields.io/github/v/release/KyoNinja/Privacy-Leak-Go?display_name=tag&sort=semver&label=latest&color=2ea44f)](https://github.com/KyoNinja/Privacy-Leak-Go/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/KyoNinja/Privacy-Leak-Go/total?label=downloads&color=1f6feb)](https://github.com/KyoNinja/Privacy-Leak-Go/releases)
 
-<a href="https://github.com/KyoNinja/Privacy-Leak-Go/releases/download/v1.5.0/PrivacyLeakGO-v1.5.0-windows-x64.exe">
+<a href="https://github.com/KyoNinja/Privacy-Leak-Go/releases/download/v1.6.0/PrivacyLeakGO-v1.6.0-windows-x64.exe">
   <img src="https://img.shields.io/badge/⬇%20Download%20for%20Windows-x64-2ea44f?style=for-the-badge&logo=windows&logoColor=white" alt="Download for Windows x64" height="46">
 </a>
 
-<sub>Current release: v1.5.0 · [all releases](https://github.com/KyoNinja/Privacy-Leak-Go/releases) · [changelog](CHANGELOG.md)</sub>
+<sub>Current release: v1.6.0 · [all releases](https://github.com/KyoNinja/Privacy-Leak-Go/releases) · [changelog](CHANGELOG.md)</sub>
 
 </div>
 
@@ -21,9 +21,9 @@
 
 ## Getting started
 
-1. **[Download the app](https://github.com/KyoNinja/Privacy-Leak-Go/releases/download/v1.5.0/PrivacyLeakGO-v1.5.0-windows-x64.exe)** (the button above).
+1. **[Download the app](https://github.com/KyoNinja/Privacy-Leak-Go/releases/download/v1.6.0/PrivacyLeakGO-v1.6.0-windows-x64.exe)** (the button above).
 2. Windows SmartScreen may warn about an unknown publisher — the build is unsigned. Click **More info → Run anyway**.
-3. Double-click `PrivacyLeakGO-v1.5.0-windows-x64.exe`. It's portable; nothing gets installed.
+3. Double-click `PrivacyLeakGO-v1.6.0-windows-x64.exe`. It's portable; nothing gets installed.
 
 ## Features
 
@@ -42,13 +42,13 @@
 
 ## Verify your download (optional)
 
-Every release ships a [`SHA256SUMS.txt`](https://github.com/KyoNinja/Privacy-Leak-Go/releases/download/v1.5.0/SHA256SUMS.txt) covering all published files. In PowerShell:
+Every release ships a [`SHA256SUMS.txt`](https://github.com/KyoNinja/Privacy-Leak-Go/releases/download/v1.6.0/SHA256SUMS.txt) covering all published files. In PowerShell:
 
 ```powershell
-Get-FileHash .\PrivacyLeakGO-v1.5.0-windows-x64.exe -Algorithm SHA256
+Get-FileHash .\PrivacyLeakGO-v1.6.0-windows-x64.exe -Algorithm SHA256
 ```
 
-Compare the result with the line for `PrivacyLeakGO-v1.5.0-windows-x64.exe` in `SHA256SUMS.txt`.
+Compare the result with the line for `PrivacyLeakGO-v1.6.0-windows-x64.exe` in `SHA256SUMS.txt`.
 
 ## Updates
 
