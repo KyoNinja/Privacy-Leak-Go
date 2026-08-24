@@ -1,16 +1,9 @@
 # Privacy Leak GO
 
-A Wails desktop client for browsing followed Privacy.com.br profiles and downloading accessible media to disk. Login is completed in an external Chromium-based browser. Uploading to file hosts is optional; the local download is always kept.
-
-<p align="center">
-  <a href="https://github.com/KyoNinja/Privacy-Leak-Go/releases/download/v1.9.0/PrivacyLeakGO-v1.9.0-windows-x64.exe"><img src="https://img.shields.io/badge/Windows%20x64-download-2ea44f?style=flat-square&logo=windows&logoColor=white" alt="Download for Windows x64"></a>
-  <a href="https://github.com/KyoNinja/Privacy-Leak-Go/releases/download/v1.9.0/PrivacyLeakGO-v1.9.0-linux-amd64.deb"><img src="https://img.shields.io/badge/Ubuntu%20amd64-.deb-E95420?style=flat-square&logo=ubuntu&logoColor=white" alt="Download Ubuntu amd64 package"></a>
-  <a href="https://github.com/KyoNinja/Privacy-Leak-Go/releases/download/v1.9.0/PrivacyLeakGO-v1.9.0-linux-x64.tar.gz"><img src="https://img.shields.io/badge/Linux%20x64-tar.gz-1f6feb?style=flat-square&logo=linux&logoColor=white" alt="Download Linux x64 archive"></a>
-</p>
+A desktop application for Windows and Linux that lets you browse followed Privacy.com.br profiles and download media available to your account. Login is completed in an external Chromium-based browser.
 
 <p align="center">
   <a href="https://github.com/KyoNinja/Privacy-Leak-Go/releases/latest"><img src="https://img.shields.io/github/v/release/KyoNinja/Privacy-Leak-Go?display_name=tag&sort=semver&label=latest&color=2ea44f" alt="Latest release"></a>
-  <a href="https://github.com/KyoNinja/Privacy-Leak-Go/releases"><img src="https://img.shields.io/github/downloads/KyoNinja/Privacy-Leak-Go/total?label=downloads&color=1f6feb" alt="Total downloads"></a>
   <a href="CHANGELOG.md"><img src="https://img.shields.io/badge/changelog-read-6f42c1" alt="Read the changelog"></a>
 </p>
 
@@ -52,43 +45,42 @@ Extract [`PrivacyLeakGO-v1.9.0-linux-x64.tar.gz`](https://github.com/KyoNinja/Pr
 
 ## Features
 
-- Profile search, sorting, multi-select, public preview, and local “new media” estimates.
-- Bulk downloads from **Feed**, **Purchased**, **Chat**, or **All**, with media-type filters and per-source limits.
-- Manual media selection with filters for type, source, date, and already-downloaded items.
-- HLS playlist/key handling, segment progress, and FFmpeg conversion for video.
+- Search and sort followed profiles, select several at once, inspect public metadata, and estimate new media.
+- Downloads from **Feed**, **Purchased**, **Chat**, or **All**, with media-type filters and per-source limits.
+- Manual media selection with filters for type, source, date, and only-new items.
+- HLS playlist and encryption-key handling, segment progress, and FFmpeg video conversion.
 - Configurable filename templates, collision-safe numbering, media indexes, and rotating per-profile logs.
 - English and Portuguese interface.
-- Optional uploads to several file hosts. Uploads run independently of the download queue and never remove the local file.
+- Optional uploads to supported file hosts, configured separately for images and videos.
 
-## Architecture
+## Technical overview
 
-The application runs locally as a single Wails process. The React interface is embedded into the desktop binary and communicates with the Go backend through Wails bindings and events. The backend talks directly to Privacy.com.br and, when enabled, to the configured upload hosts; there is no project server involved in the normal desktop flow.
+The app runs as a local desktop process. Wails embeds the production React bundle and exposes Go methods and events to the UI. Go handles authentication, network requests, filesystem access, and background jobs. The download path calls Privacy.com.br directly; uploads, when enabled, call the selected hosts. No separate service is required to run the app.
 
-| Area | Stack | Responsibility |
+| Component | Technology | Role |
 | --- | --- | --- |
-| Desktop shell | Wails v2.13.0 | Native window, embedded frontend, Go/JavaScript bindings, and runtime events |
-| Frontend | React 18, TypeScript, Vite 5, Tailwind CSS 4 | Profiles, downloads, uploads, settings, progress, and logs |
-| Application backend | Go 1.25 | API client, authentication, scraping, download jobs, settings, and upload jobs |
-| Browser login | `chromedp` + Chrome DevTools Protocol | Opens a headed Chromium-family browser and captures the authenticated session |
-| Media pipeline | Go HTTP/HLS code + FFmpeg | Discovers media, downloads HLS playlists/segments, and converts video |
-| Local state | JSON files, media indexes, and log files | Settings, session tokens, profile cache, downloaded-media state, and diagnostics |
-| Upload adapters | Go `Uploader` interface | Provider-specific authentication, folders/albums, retries, progress, and routing |
+| Desktop shell | Wails v2.13.0 | Native window, embedded frontend, and Go/JavaScript bridge |
+| UI | React 18, TypeScript, Vite 5, Tailwind CSS 4 | Profiles, downloads, uploads, settings, progress, and logs |
+| Backend | Go 1.25 | API client, authentication, scraping, and background jobs |
+| Browser login | `chromedp` + Chrome DevTools Protocol | Headed Chromium-family login and session capture |
+| Media | Go HTTP client, HLS pipeline + FFmpeg | Playlist/segment downloads and video conversion |
+| Storage | JSON files, media indexes, and logs | Settings, session, cache, download state, and diagnostics |
+| Uploads | Go `Uploader` interface | Host-specific authentication, albums/folders, retries, and progress |
 
-The main Go application coordinates the backend packages under `backend/`: `api`, `auth`, `config`, `media`, and `uploadhost`. Upload providers are isolated behind an interface so each host can implement its own API and authentication rules.
+The backend is organized into `api`, `auth`, `config`, `media`, and `uploadhost`. Upload providers share the `Uploader` interface; host-specific API code lives in `backend/uploadhost`.
 
-## Local data
+## Files and session
 
-User data is stored below `PrivacyDesktop` in the platform configuration directory:
+Settings, session data, caches, media indexes, and logs are stored under `PrivacyDesktop`:
 
 - Windows: `%APPDATA%\PrivacyDesktop`
 - Linux: `~/.config/PrivacyDesktop`
-- macOS: `~/Library/Application Support/PrivacyDesktop`
 
-This directory contains settings, the saved session, profile caches, media indexes, and logs. Treat the session file as sensitive and do not share it.
+The session file contains authentication tokens. Treat it as sensitive and do not share it.
 
 ## Optional uploads
 
-The **Uploads** page can mirror completed files to configured destinations. Routing is separate for photos and videos:
+The **Uploads** page can mirror completed files to configured destinations. Image and video destinations are configured separately:
 
 | Host | Media |
 | --- | --- |
@@ -98,7 +90,7 @@ The **Uploads** page can mirror completed files to configured destinations. Rout
 | Turbo | Videos |
 | GoonBox | Photos |
 
-Authentication requirements and host capabilities are checked by the app. Configure only destinations you trust; these services are independent third parties and are not backups.
+The app checks each host's authentication requirements and supported media types. Credentials are configured in Settings.
 
 ## Requirements
 
@@ -108,7 +100,7 @@ Authentication requirements and host capabilities are checked by the app. Config
 | Ubuntu 24.04 · amd64 | GTK3, WebKitGTK 4.1, a Chromium-family browser, and FFmpeg available in `PATH`. |
 | Other Linux · x64 | Compatible GTK3/WebKitGTK runtime, a Chromium-family browser, and FFmpeg in `PATH`; support is best effort. |
 
-Firefox is not a supported browser-login path on Linux.
+On Linux, login requires a Chromium-family browser; Firefox is not supported.
 
 ## Verify a download
 
@@ -127,13 +119,9 @@ sha256sum ./PrivacyLeakGO-v1.9.0-linux-x64.tar.gz
 sha256sum ./PrivacyLeakGO-v1.9.0-linux-amd64.deb
 ```
 
-## Updates and changelog
+## Releases
 
-See the [latest release](https://github.com/KyoNinja/Privacy-Leak-Go/releases/latest) for downloads and [`CHANGELOG.md`](CHANGELOG.md) for release notes.
+Download the current artifacts from the [latest release](https://github.com/KyoNinja/Privacy-Leak-Go/releases/latest). Changes are listed in [`CHANGELOG.md`](CHANGELOG.md).
 
-Use the app only for media you are authorized to access. Privacy.com.br and third-party upload-host APIs can change independently of this project.
-
----
-
-<p align="center"><sub>Release assets and this README are synchronized automatically from the source repository.</sub></p>
+Only download media you are authorized to access. Privacy.com.br and upload-host APIs can change independently of this project.
 
