@@ -6,6 +6,13 @@
  v1.0.0 is the historical baseline and stays in the old format.
 -->
 
+## 1.8.0 (2026-08-24)
+
+
+### Features
+
+* **linux:** add Ubuntu cross-platform support (#112) (e578db0)
+
 ## 1.7.0 (2026-08-24)
 
 
