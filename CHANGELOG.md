@@ -6,6 +6,13 @@
  v1.0.0 is the historical baseline and stays in the old format.
 -->
 
+## 1.7.0 (2026-08-24)
+
+
+### Features
+
+* **uploads:** add parallel uploads, album management, and CyberDrop provider (#109) (aed4495)
+
 ## 1.6.0 (2026-08-23)
 
 
