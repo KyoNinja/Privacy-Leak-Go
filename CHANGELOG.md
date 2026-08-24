@@ -6,13 +6,6 @@
  v1.0.0 is the historical baseline and stays in the old format.
 -->
 
-## 1.9.0 (2026-08-24)
-
-
-### Features
-
-* **linux:** add native Ubuntu package (#121) (75fedc7)
-
 ## 1.8.0 (2026-08-24)
 
 
