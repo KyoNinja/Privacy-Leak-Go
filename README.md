@@ -15,6 +15,9 @@
 <a href="https://github.com/KyoNinja/Privacy-Leak-Go/releases/download/v1.8.0/PrivacyLeakGO-v1.8.0-linux-x64.tar.gz">
   <img src="https://img.shields.io/badge/⬇%20Download%20for%20Linux-x64-2ea44f?style=for-the-badge&logo=linux&logoColor=white" alt="Download for Linux x64" height="46">
 </a>
+<a href="https://github.com/KyoNinja/Privacy-Leak-Go/releases/download/v1.8.0/PrivacyLeakGO-v1.8.0-linux-amd64.deb">
+  <img src="https://img.shields.io/badge/⬇%20Install%20on%20Ubuntu-amd64-E95420?style=for-the-badge&logo=ubuntu&logoColor=white" alt="Install on Ubuntu amd64" height="46">
+</a>
 
 <sub>Current release: v1.8.0 · [all releases](https://github.com/KyoNinja/Privacy-Leak-Go/releases) · [changelog](CHANGELOG.md)</sub>
 
@@ -27,7 +30,8 @@
 1. **[Download the app](https://github.com/KyoNinja/Privacy-Leak-Go/releases/download/v1.8.0/PrivacyLeakGO-v1.8.0-windows-x64.exe)** (the button above).
 2. Windows SmartScreen may warn about an unknown publisher — the build is unsigned. Click **More info → Run anyway**.
 3. Double-click `PrivacyLeakGO-v1.8.0-windows-x64.exe`. It's portable; nothing gets installed.
-4. On Linux, download [`PrivacyLeakGO-v1.8.0-linux-x64.tar.gz`](https://github.com/KyoNinja/Privacy-Leak-Go/releases/download/v1.8.0/PrivacyLeakGO-v1.8.0-linux-x64.tar.gz), extract it, and run the included executable from a terminal.
+4. On Ubuntu 24.04, download [`PrivacyLeakGO-v1.8.0-linux-amd64.deb`](https://github.com/KyoNinja/Privacy-Leak-Go/releases/download/v1.8.0/PrivacyLeakGO-v1.8.0-linux-amd64.deb) and run `sudo apt install ./PrivacyLeakGO-v1.8.0-linux-amd64.deb`.
+5. On other Linux systems, download [`PrivacyLeakGO-v1.8.0-linux-x64.tar.gz`](https://github.com/KyoNinja/Privacy-Leak-Go/releases/download/v1.8.0/PrivacyLeakGO-v1.8.0-linux-x64.tar.gz), extract it, and run the included executable from a terminal.
 
 ## Features
 
@@ -57,6 +61,8 @@ Compare the result with the line for `PrivacyLeakGO-v1.8.0-windows-x64.exe` in `
 
 On Linux, run `sha256sum ./PrivacyLeakGO-v1.8.0-linux-x64.tar.gz` and compare it with the line for
 `PrivacyLeakGO-v1.8.0-linux-x64.tar.gz` in `SHA256SUMS.txt`.
+For the Ubuntu package, use `sha256sum ./PrivacyLeakGO-v1.8.0-linux-amd64.deb` and compare it with the
+corresponding line in `SHA256SUMS.txt`.
 
 ## Updates
 
@@ -65,6 +71,6 @@ The app checks this repository for newer releases and links you back here. See t
 ---
 
 <div align="center">
-<sub>Windows and Linux x64 builds are published automatically.</sub>
+<sub>Windows x64, portable Linux x64 and Ubuntu amd64 builds are published automatically.</sub>
 </div>
 
