@@ -6,6 +6,51 @@
  v1.0.0 is the historical baseline and stays in the old format.
 -->
 
+## 2.0.0 (2026-08-25)
+
+
+### Features
+
+* **downloads:** rework the download screen into a three-step composer (6a972f9)
+* **downloads:** preserve post media grouping and source publication timestamps (98000c1, e64a8a3)
+* **downloads:** browse and download media by account chat room (5e7bd81)
+* **uploads:** rebuild the Uploads screen as a three-step composer with batch history (de9f106, 6307df0, 77bbef8)
+* **uploads:** add PixelDrain and Gofile upload providers (63107c2, 6f60053)
+* **uploads:** add external folder batch uploads (6a23e2c)
+* **uploads:** support selecting existing destination albums and creating PixelDrain lists (e10ccc9, 41b4fde)
+* **uploads:** configure worker pools per destination host (19c3cea)
+* **profiles:** redesign profiles library with row layout, detail drawer and Mirror Matrix (cad827c)
+* **profiles:** show archived purchase records (94adb3c)
+* **backend:** add batch profile mirror summaries and health metrics bridge (79bb80d)
+
+
+### Bug Fixes
+
+* **downloads:** preserve IDs and content fingerprints across migrations (cfab76b)
+* **downloads:** bind archived chat scans to rooms (150b9fa)
+* **uploads:** detect incomplete GoonBox sessions and finalize collections (99de18f, d35171d)
+* **uploads:** preserve routed status semantics and handle empty destination selections (c28d70c, 73c52ca)
+* **uploads:** align content fingerprint migration and provider folder handling (55ae7fd, ba84af5, a9f9882)
+
+
+### Performance
+
+* **uploads:** reuse listing snapshot for transfer counts (91aa1c9)
+
+
+### Refactoring & Chores
+
+* **profiles:** modernize profile state estimation and selection hooks (53f855e)
+* **deps:** update frontend packages and align React 19 types (c8af5fb)
+* **ci:** automate release back-sync pipeline and improve promotion resilience (81b1ac9)
+
+## 1.9.0 (2026-08-24)
+
+
+### Features
+
+* **linux:** add native Ubuntu package (#121) (75fedc7)
+
 ## 1.8.0 (2026-08-24)
 
 
