@@ -7,33 +7,33 @@ A desktop application for Windows and Linux that lets you browse followed Privac
   <a href="CHANGELOG.md"><img src="https://img.shields.io/badge/changelog-read-6f42c1" alt="Read the changelog"></a>
 </p>
 
-> Current release: `v1.9.0` · Windows x64 portable executable · Ubuntu amd64 package · Linux x64 archive
+> Current release: `v2.0.0` · Windows x64 portable executable · Ubuntu amd64 package · Linux x64 archive
 
 ## Download
 
 | Target | Package | Notes |
 | --- | --- | --- |
-| Windows 10/11 · x64 | [`PrivacyLeakGO-v1.9.0-windows-x64.exe`](https://github.com/KyoNinja/Privacy-Leak-Go/releases/download/v1.9.0/PrivacyLeakGO-v1.9.0-windows-x64.exe) | Portable `.exe`; no installer |
-| Ubuntu 24.04 · amd64 | [`PrivacyLeakGO-v1.9.0-linux-amd64.deb`](https://github.com/KyoNinja/Privacy-Leak-Go/releases/download/v1.9.0/PrivacyLeakGO-v1.9.0-linux-amd64.deb) | Native `.deb` package |
-| Other Linux · x64 | [`PrivacyLeakGO-v1.9.0-linux-x64.tar.gz`](https://github.com/KyoNinja/Privacy-Leak-Go/releases/download/v1.9.0/PrivacyLeakGO-v1.9.0-linux-x64.tar.gz) | Portable `.tar.gz` archive |
+| Windows 10/11 · x64 | [`PrivacyLeakGO-v2.0.0-windows-x64.exe`](https://github.com/KyoNinja/Privacy-Leak-Go/releases/download/v2.0.0/PrivacyLeakGO-v2.0.0-windows-x64.exe) | Portable `.exe`; no installer |
+| Ubuntu 24.04 · amd64 | [`PrivacyLeakGO-v2.0.0-linux-amd64.deb`](https://github.com/KyoNinja/Privacy-Leak-Go/releases/download/v2.0.0/PrivacyLeakGO-v2.0.0-linux-amd64.deb) | Native `.deb` package |
+| Other Linux · x64 | [`PrivacyLeakGO-v2.0.0-linux-x64.tar.gz`](https://github.com/KyoNinja/Privacy-Leak-Go/releases/download/v2.0.0/PrivacyLeakGO-v2.0.0-linux-x64.tar.gz) | Portable `.tar.gz` archive |
 
 ## Install
 
 ### Windows
 
-Download [`PrivacyLeakGO-v1.9.0-windows-x64.exe`](https://github.com/KyoNinja/Privacy-Leak-Go/releases/download/v1.9.0/PrivacyLeakGO-v1.9.0-windows-x64.exe) and run it. The executable is portable. Windows SmartScreen may display an unknown-publisher warning because the release is not code-signed.
+Download [`PrivacyLeakGO-v2.0.0-windows-x64.exe`](https://github.com/KyoNinja/Privacy-Leak-Go/releases/download/v2.0.0/PrivacyLeakGO-v2.0.0-windows-x64.exe) and run it. The executable is portable. Windows SmartScreen may display an unknown-publisher warning because the release is not code-signed.
 
 ### Ubuntu 24.04
 
-Download [`PrivacyLeakGO-v1.9.0-linux-amd64.deb`](https://github.com/KyoNinja/Privacy-Leak-Go/releases/download/v1.9.0/PrivacyLeakGO-v1.9.0-linux-amd64.deb), then install it from the directory where it was saved:
+Download [`PrivacyLeakGO-v2.0.0-linux-amd64.deb`](https://github.com/KyoNinja/Privacy-Leak-Go/releases/download/v2.0.0/PrivacyLeakGO-v2.0.0-linux-amd64.deb), then install it from the directory where it was saved:
 
 ```bash
-sudo apt install ./PrivacyLeakGO-v1.9.0-linux-amd64.deb
+sudo apt install ./PrivacyLeakGO-v2.0.0-linux-amd64.deb
 ```
 
 ### Other Linux systems
 
-Extract [`PrivacyLeakGO-v1.9.0-linux-x64.tar.gz`](https://github.com/KyoNinja/Privacy-Leak-Go/releases/download/v1.9.0/PrivacyLeakGO-v1.9.0-linux-x64.tar.gz) and run the included executable from a terminal. Ubuntu 22.04 and other Debian-derived distributions are compatibility targets on a best-effort basis.
+Extract [`PrivacyLeakGO-v2.0.0-linux-x64.tar.gz`](https://github.com/KyoNinja/Privacy-Leak-Go/releases/download/v2.0.0/PrivacyLeakGO-v2.0.0-linux-x64.tar.gz) and run the included executable from a terminal. Ubuntu 22.04 and other Debian-derived distributions are compatibility targets on a best-effort basis.
 
 ## Usage
 
@@ -104,19 +104,19 @@ On Linux, login requires a Chromium-family browser; Firefox is not supported.
 
 ## Verify a download
 
-Each release includes [`SHA256SUMS.txt`](https://github.com/KyoNinja/Privacy-Leak-Go/releases/download/v1.9.0/SHA256SUMS.txt), containing SHA-256 checksums for the published files.
+Each release includes [`SHA256SUMS.txt`](https://github.com/KyoNinja/Privacy-Leak-Go/releases/download/v2.0.0/SHA256SUMS.txt), containing SHA-256 checksums for the published files.
 
 **PowerShell (Windows)**
 
 ```powershell
-Get-FileHash .\PrivacyLeakGO-v1.9.0-windows-x64.exe -Algorithm SHA256
+Get-FileHash .\PrivacyLeakGO-v2.0.0-windows-x64.exe -Algorithm SHA256
 ```
 
 **Linux**
 
 ```bash
-sha256sum ./PrivacyLeakGO-v1.9.0-linux-x64.tar.gz
-sha256sum ./PrivacyLeakGO-v1.9.0-linux-amd64.deb
+sha256sum ./PrivacyLeakGO-v2.0.0-linux-x64.tar.gz
+sha256sum ./PrivacyLeakGO-v2.0.0-linux-amd64.deb
 ```
 
 ## Releases
