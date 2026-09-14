@@ -6,6 +6,36 @@
  v1.0.0 is the historical baseline and stays in the old format.
 -->
 
+## 2.1.0 (2026-09-14)
+
+
+### Features
+
+* **api:** add timeout-free media client with streaming downloads (93fd61a)
+* **media:** add stall watchdog, atomic replace and HLS resume helpers (d396c3f)
+* **media:** add streaming downloads, resume interrupted transfers and normalize media index keys (f870f97)
+* **media:** resume interrupted HLS downloads across syncs (4474c01)
+* **media:** stream images and resume interrupted MP4 downloads (d581400)
+
+
+### Bug Fixes
+
+* **api:** bound wait for streaming response headers (cd1a25c)
+* **hls:** validate complete media resources (908cae6)
+* **media:** close download lifecycle gaps (30890db)
+* **media:** close resumable integrity gaps (90f0791)
+* **media:** harden resumable download integrity (7eaee77)
+* **media:** isolate resumable artifacts (d1bc57b)
+* **media:** match existing files and manifest keys case-insensitively (245eba7)
+* **media:** normalize signed variant URLs and validate HLS segment integrity (1378170)
+* **media:** optimize known-media lookup with canonical lowercase keys (c831a3a)
+* **media:** propagate cancellation through HLS (87dc4b4)
+* **media:** protect resumable artifact ownership (7db495f)
+* **media:** validate content range on MP4 resume and reject partial completions (07b1333)
+* **media:** verify MP4 output exists and is non-empty after FFmpeg conversion (3bd704e)
+* **profiles:** canonicalize media index keys and heal case duplicates (32fdb3d)
+* **profiles:** merge duplicate media index entries and uploads deterministically (e716a30)
+
 ## 2.0.0 (2026-08-25)
 
 
